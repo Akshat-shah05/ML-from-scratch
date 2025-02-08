@@ -73,6 +73,14 @@ def get_accuracy(predictions, Y):
     print(predictions, Y)
     return np.sum(predictions == Y) / Y.size
 
+# SIMPLE LOOP
+'''
+1. Do a forward prop --> this will give you all the calculated values
+2. Do a back prop --> go in reverse, use the calculated values to determine the derivative terms
+3. Update the params --> e.g w_j = w_j - alpha * dw_j (apply to all params)
+4. Repeat 1 - 3 for as many epochs as you want
+'''
+
 def gradient_descent(X, Y, epochs, alpha):
     W1, b1, W2, b2 = init_params()
     for i in range(epochs):
